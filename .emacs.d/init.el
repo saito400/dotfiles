@@ -33,3 +33,11 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; backspace
+(keyboard-translate ?\C-h ?\C-?)
+
+;; help
+(define-key global-map (kbd "C-x ?") 'help-command)
+
+;; switch tab
+(define-key global-map (kbd "C-t") 'other-window)
