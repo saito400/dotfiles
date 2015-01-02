@@ -41,3 +41,6 @@
 
 ;; switch tab
 (define-key global-map (kbd "C-t") 'other-window)
+
+(electric-indent-mode 0)
+
