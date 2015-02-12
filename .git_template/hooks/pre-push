@@ -9,3 +9,8 @@ if [ "${branch##refs/heads/}" = "master" ]; then
   echo "Do not push on the master branch!"
   exit 1
 fi
+
+if [ "${branch##refs/heads/}" = "develop" ]; then
+  echo "Do not push on the develop branch!"
+  exit 1
+fi
