@@ -15,3 +15,6 @@ alias less='less -N'
 alias ll='ls -al'
 eval "$(rbenv init -)"
 setopt share_history
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
