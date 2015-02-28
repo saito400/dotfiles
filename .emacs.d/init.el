@@ -25,6 +25,19 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+;; install packages
+
+(unless (package-installed-p 'helm)
+  (package-refresh-contents) (package-install 'helm))
+
+(unless (package-installed-p 'scala-mode2)
+  (package-refresh-contents) (package-install 'scala-mode2))
+  
+(unless (package-installed-p 'ensime)
+  (package-refresh-contents) (package-install 'ensime))
+
+
+
 ;; for helm
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key global-map (kbd "C-x C-o") 'helm-for-files)
