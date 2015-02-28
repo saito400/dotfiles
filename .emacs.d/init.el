@@ -20,9 +20,10 @@
 
 ;; for package.el
 
-(package-initialize)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 ;; for helm
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
@@ -43,4 +44,13 @@
 (define-key global-map (kbd "C-t") 'other-window)
 
 (electric-indent-mode 0)
+
+;; scala-mode2
+(require 'scala-mode2)
+
+;; ensime
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+
 
