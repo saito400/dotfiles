@@ -40,7 +40,7 @@
 
 ;; for helm
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
-(define-key global-map (kbd "C-x C-o") 'helm-for-files)
+(define-key global-map (kbd "C-x C-o") 'helm-mini)
 
 
 ;; turn off auto save and auto backup
