@@ -58,6 +58,9 @@
 
 (electric-indent-mode 0)
 
+(setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
+(setenv "PATH" (concat "/usr/local/bin/scala:" (getenv "PATH")))
+
 ;; scala-mode2
 (require 'scala-mode2)
 
