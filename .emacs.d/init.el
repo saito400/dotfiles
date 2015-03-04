@@ -38,6 +38,8 @@
 (unless (package-installed-p 'ensime)
   (package-refresh-contents) (package-install 'ensime))
 
+(unless (package-installed-p 'helm-ls-git)
+  (package-refresh-contents) (package-install 'helm-ls-git))
 
 
 ;; for helm
