@@ -41,6 +41,7 @@
 (unless (package-installed-p 'helm-ls-git)
   (package-refresh-contents) (package-install 'helm-ls-git))
 
+(require 'helm)
 
 ;; for helm
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
@@ -57,9 +58,6 @@
 ;; help
 (define-key global-map (kbd "C-x ?") 'help-command)
 
-;; switch tab
-(define-key global-map (kbd "C-t") 'other-window)
-
 (electric-indent-mode 0)
 
 (setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
@@ -73,7 +71,6 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 (progn
-  (require 'helm)
   (require 'helm-ls-git)
   (custom-set-variables
    '(helm-truncate-lines t)
