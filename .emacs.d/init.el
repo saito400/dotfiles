@@ -42,11 +42,10 @@
   (package-refresh-contents) (package-install 'helm-ls-git))
 
 (require 'helm)
+(helm-mode 1)
 
 ;; for helm
-(define-key global-map (kbd "C-x C-f") 'helm-find-files)
 (define-key global-map (kbd "C-x C-o") 'helm-mini)
-
 
 ;; turn off auto save and auto backup
 (setq make-backup-files nil)
@@ -55,11 +54,9 @@
 ;; backspace
 (keyboard-translate ?\C-h ?\C-?)
 
-;; help
-(define-key global-map (kbd "C-x ?") 'help-command)
-
 (electric-indent-mode 0)
 
+;; for scala
 (setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/local/bin/scala:" (getenv "PATH")))
 
