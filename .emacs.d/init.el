@@ -72,5 +72,14 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-
-
+(progn
+  (require 'helm)
+  (require 'helm-ls-git)
+  (custom-set-variables
+   '(helm-truncate-lines t)
+   '(helm-delete-minibuffer-contents-from-point t)
+   '(helm-mini-default-sources '(helm-source-buffers-list
+                                 helm-source-files-in-current-dir
+                                 helm-source-ls-git
+                                 helm-source-recentf
+                                 ))))
