@@ -1,16 +1,15 @@
 #!/bin/sh
 
-# if the branch is master, then fail.
+while read local_ref local_sha1 remote_ref remote_sha1
+do
+  if [[ "${remote_ref##refs/heads/}" = "master" ]]; then
+    echo "Do not push to master branch!!!"
+    exit 1
+  fi
 
-branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
-       "$(git describe --contains --all HEAD)"
+  if [[ "${remote_ref##refs/heads/}" = "develop" ]]; then
+    echo "Do not push to develop branch!!!"
+    exit 1
+  fi
+done
 
-if [ "${branch##refs/heads/}" = "master" ]; then
-  echo "Do not push on the master branch!"
-  exit 1
-fi
-
-if [ "${branch##refs/heads/}" = "develop" ]; then
-  echo "Do not push on the develop branch!"
-  exit 1
-fi
