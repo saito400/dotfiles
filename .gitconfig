@@ -1,0 +1,27 @@
+[user]
+	name = saito400
+	email = ken.s.530000@gmail.com
+[core]
+	excludesfile = /Users/ken/.gitignore_global
+	editor = emacs
+
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[init]
+[alias]
+	ls = log --stat
+	lp = log -p
+	lg = log --graph --pretty=oneline
+	cf = git commit -m \"fixup! c\"
+	conflict = diff --name-only --diff-filter=U
+	s = status
+	d = diff
+[init]
+	templatedir = /Users/ken/.git_template/
+[push]
+	default = simple
