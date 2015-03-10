@@ -21,6 +21,7 @@
 	conflict = diff --name-only --diff-filter=U
 	s = status
 	d = diff
+	aa = add -A
 [init]
 	templatedir = /Users/ken/.git_template/
 [push]
