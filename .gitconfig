@@ -17,7 +17,7 @@
 	ls = log --stat
 	lp = log -p
 	lg = log --graph --pretty=oneline
-	cf = git commit -m \"fixup! c\"
+	cf = commit -m \"fixup! c\"
 	conflict = diff --name-only --diff-filter=U
 	s = status
 	d = diff
