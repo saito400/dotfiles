@@ -41,6 +41,9 @@
 (unless (package-installed-p 'helm-ls-git)
   (package-refresh-contents) (package-install 'helm-ls-git))
 
+(unless (package-installed-p 'web-mode)
+  (package-refresh-contents) (package-install 'web-mode))
+
 (require 'helm)
 (helm-mode 1)
 
@@ -77,3 +80,18 @@
                                  helm-source-ls-git
                                  helm-source-recentf
                                  ))))
+
+
+;; web-mode 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
