@@ -14,6 +14,7 @@
 ;; display line number
 (global-linum-mode t)
 ;; tab
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 ;; disable magic comment
 (setq ruby-insert-encoding-magic-comment nil)
