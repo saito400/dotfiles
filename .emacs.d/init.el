@@ -45,10 +45,12 @@
 (unless (package-installed-p 'web-mode)
   (package-refresh-contents) (package-install 'web-mode))
 
-(require 'helm)
-(helm-mode 1)
+(unless (package-installed-p 'go-mode)
+  (package-refresh-contents) (package-install 'go-mode))
 
 ;; for helm
+(require 'helm)
+(helm-mode 1)
 (define-key global-map (kbd "C-x C-o") 'helm-mini)
 
 ;; turn off auto save and auto backup
@@ -96,3 +98,6 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+;; go-mode
+(require 'go-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
