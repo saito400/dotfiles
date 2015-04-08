@@ -48,6 +48,9 @@
 (unless (package-installed-p 'go-mode)
   (package-refresh-contents) (package-install 'go-mode))
 
+(unless (package-installed-p 'auto-complete)
+  (package-refresh-contents) (package-install 'auto-complete))
+
 ;; for helm
 (require 'helm)
 (helm-mode 1)
@@ -73,6 +76,7 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+;; helm-mini
 (progn
   (require 'helm-ls-git)
   (custom-set-variables
@@ -101,3 +105,15 @@
 ;; go-mode
 (require 'go-mode)
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+;; auto-complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+(define-key ac-completing-map (kbd "M-n") 'ac-next)
+(define-key ac-completing-map (kbd "M-p") 'ac-previous)
+(setq-default ac-sources '(ac-source-filename ac-source-words-in-same-mode-buffers))
+(add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols t)))
+(setq ac-auto-start 2)
+(ac-set-trigger-key "TAB") 
