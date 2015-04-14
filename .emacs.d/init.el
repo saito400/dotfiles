@@ -51,6 +51,9 @@
 (unless (package-installed-p 'auto-complete)
   (package-refresh-contents) (package-install 'auto-complete))
 
+(unless (package-installed-p 'markdown-mode)
+  (package-refresh-contents) (package-install 'markdown-mode))
+
 ;; for helm
 (require 'helm)
 (helm-mode 1)
@@ -117,3 +120,10 @@
 (add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols t)))
 (setq ac-auto-start 2)
 (ac-set-trigger-key "TAB") 
+
+;; markdown-mode
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
