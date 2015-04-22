@@ -54,6 +54,9 @@
 (unless (package-installed-p 'markdown-mode)
   (package-refresh-contents) (package-install 'markdown-mode))
 
+(unless (package-installed-p 'wgrep)
+  (package-refresh-contents) (package-install 'wgrep))
+
 ;; for helm
 (require 'helm)
 (helm-mode 1)
@@ -127,3 +130,10 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; wgrep
+;;; eでwgrepモードにする
+(setf wgrep-enable-key "e")
+;;; wgrep終了時にバッファを保存
+(setq wgrep-auto-save-buffer t)
+;;; read-only bufferにも変更を適用する
+(setq wgrep-change-readonly-file t)
