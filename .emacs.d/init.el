@@ -117,6 +117,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode t)
+(add-to-list 'ac-modes 'text-mode)
 (define-key ac-completing-map (kbd "M-n") 'ac-next)
 (define-key ac-completing-map (kbd "M-p") 'ac-previous)
 (setq-default ac-sources '(ac-source-filename ac-source-words-in-same-mode-buffers))
