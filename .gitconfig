@@ -22,6 +22,7 @@
 	s = status
 	d = diff
 	aa = add -A
+	co = checkout
 [init]
 	templatedir = /Users/ken/.git_template/
 [push]
