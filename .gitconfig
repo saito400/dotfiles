@@ -23,6 +23,7 @@
 	d = diff
 	aa = add -A
 	co = checkout
+	pp = pull --prune
 [init]
 	templatedir = /Users/ken/.git_template/
 [push]
