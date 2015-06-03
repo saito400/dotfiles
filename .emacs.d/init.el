@@ -99,6 +99,7 @@
 (progn
   (require 'helm-ls-git)
   (custom-set-variables
+   '(frame-background-mode (quote dark))
    '(helm-truncate-lines t)
    '(helm-delete-minibuffer-contents-from-point t)
    '(helm-mini-default-sources '(helm-source-buffers-list
@@ -151,3 +152,4 @@
 (setq wgrep-auto-save-buffer t)
 ;;; read-only bufferにも変更を適用する
 (setq wgrep-change-readonly-file t)
+
