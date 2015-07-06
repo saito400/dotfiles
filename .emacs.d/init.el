@@ -153,3 +153,4 @@
 ;;; read-only bufferにも変更を適用する
 (setq wgrep-change-readonly-file t)
 
+(put 'downcase-region 'disabled nil)
