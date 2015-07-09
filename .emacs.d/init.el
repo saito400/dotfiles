@@ -68,7 +68,7 @@
 ;; turn off auto save and auto backup
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(setq create-lockfiles nil)
+;; (setq create-lockfiles nil)
 
 ;; backspace
 (keyboard-translate ?\C-h ?\C-?)
