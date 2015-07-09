@@ -60,6 +60,15 @@
 (unless (package-installed-p 'wgrep)
   (package-refresh-contents) (package-install 'wgrep))
 
+(unless (package-installed-p 'flycheck)
+  (package-refresh-contents) (package-install 'flycheck))
+
+(unless (package-installed-p 'atom-dark-theme)
+  (package-refresh-contents) (package-install 'atom-dark-theme))
+
+;;theme
+(load-theme 'atom-dark t)
+
 ;; for helm
 (require 'helm)
 (helm-mode 1)
@@ -164,3 +173,7 @@
 (setq wgrep-change-readonly-file t)
 
 (put 'downcase-region 'disabled nil)
+
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
