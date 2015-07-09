@@ -16,8 +16,7 @@
 ;; tab
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-;; disable magic comment
-(setq ruby-insert-encoding-magic-comment nil)
+
 ;;parenthesis
 (show-paren-mode t)
 
