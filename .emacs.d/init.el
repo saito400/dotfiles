@@ -17,7 +17,8 @@
 
 ;; display current line
 (global-hl-line-mode 1)
-(set-face-attribute hl-line-face nil :underline t)
+;;(set-face-attribute hl-line-face nil :underline t)
+(setq hl-line-face 'underline)
 
 ;; tab
 (setq-default tab-width 4)
