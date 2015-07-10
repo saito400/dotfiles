@@ -15,6 +15,10 @@
 (global-linum-mode t)
 (setq linum-format "%d ")
 
+;; display current line
+(global-hl-line-mode 1)
+(set-face-attribute hl-line-face nil :underline t)
+
 ;; tab
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
