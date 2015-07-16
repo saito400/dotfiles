@@ -100,6 +100,7 @@
 ;; ensime
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'scala-mode-hook 'my-scala-mode-hook)
 
 (setq ensime-sem-high-faces
  '((var . (:foreground "#ff2222"))
@@ -113,6 +114,9 @@
    (object . (:foreground "#026DF7"))
    (package . font-lock-preprocessor-face)))
 
+(defun my-scala-mode-hook ()
+  (setq scala-indent:use-javadoc-style t)
+)
 
 ;; helm-mini
 (progn
