@@ -72,6 +72,9 @@
 (unless (package-installed-p 'atom-dark-theme)
   (package-refresh-contents) (package-install 'atom-dark-theme))
 
+(unless (package-installed-p 'ace-jump-mode)
+  (package-refresh-contents) (package-install 'ace-jump-mode))
+
 ;;theme
 (load-theme 'atom-dark t)
 
@@ -84,6 +87,10 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 ;; (setq create-lockfiles nil)
+
+;; for ace-jump
+(require 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; backspace
 (keyboard-translate ?\C-h ?\C-?)
@@ -187,4 +194,6 @@
 
 ;; flycheck
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
 
