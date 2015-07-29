@@ -48,6 +48,9 @@
 (unless (package-installed-p 'helm-ls-git)
   (package-refresh-contents) (package-install 'helm-ls-git))
 
+(unless (package-installed-p 'helm-ag)
+  (package-refresh-contents) (package-install 'helm-ag))
+
 (unless (package-installed-p 'web-mode)
   (package-refresh-contents) (package-install 'web-mode))
 
@@ -75,13 +78,22 @@
 (unless (package-installed-p 'ace-jump-mode)
   (package-refresh-contents) (package-install 'ace-jump-mode))
 
+(unless (package-installed-p 'neotree)
+  (package-refresh-contents) (package-install 'neotree))
+
 ;;theme
 (load-theme 'atom-dark t)
+
+;; for neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 ;; for helm
 (require 'helm)
 (helm-mode 1)
 (define-key global-map (kbd "C-x C-o") 'helm-mini)
+(define-key global-map (kbd "C-x C-d") 'helm-browse-project)
+(define-key global-map (kbd "C-x C-g") 'helm-ag)
 
 ;; turn off auto save and auto backup
 (setq make-backup-files nil)
@@ -195,5 +207,39 @@
 ;; flycheck
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
-
-
+;; window resizer
+(defun window-resizer ()
+  "Control window size and position."
+  (interactive)
+  (let ((window-obj (selected-window))
+        (current-width (window-width))
+        (current-height (window-height))
+        (dx (if (= (nth 0 (window-edges)) 0) 1
+              -1))
+        (dy (if (= (nth 1 (window-edges)) 0) 1
+              -1))
+        action c)
+    (catch 'end-flag
+      (while t
+        (setq action
+              (read-key-sequence-vector (format "size[%dx%d]"
+                                                (window-width)
+                                                (window-height))))
+        (setq c (aref action 0))
+        (cond ((= c ?l)
+               (enlarge-window-horizontally dx))
+              ((= c ?h)
+               (shrink-window-horizontally dx))
+              ((= c ?j)
+               (enlarge-window dy))
+              ((= c ?k)
+               (shrink-window dy))
+              ;; otherwise
+              (t
+               (let ((last-command-char (aref action 0))
+                     (command (key-binding action)))
+                 (when command
+                   (call-interactively command)))
+               (message "Quit")
+               (throw 'end-flag t)))))))
+(global-set-key "\C-c\C-r" 'window-resizer)
