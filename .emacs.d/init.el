@@ -78,8 +78,15 @@
 (unless (package-installed-p 'ace-jump-mode)
   (package-refresh-contents) (package-install 'ace-jump-mode))
 
+(unless (package-installed-p 'neotree)
+  (package-refresh-contents) (package-install 'neotree))
+
 ;;theme
 (load-theme 'atom-dark t)
+
+;; for neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 ;; for helm
 (require 'helm)
