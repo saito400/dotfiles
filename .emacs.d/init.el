@@ -48,6 +48,9 @@
 (unless (package-installed-p 'helm-ls-git)
   (package-refresh-contents) (package-install 'helm-ls-git))
 
+(unless (package-installed-p 'helm-ag)
+  (package-refresh-contents) (package-install 'helm-ag))
+
 (unless (package-installed-p 'web-mode)
   (package-refresh-contents) (package-install 'web-mode))
 
@@ -82,6 +85,8 @@
 (require 'helm)
 (helm-mode 1)
 (define-key global-map (kbd "C-x C-o") 'helm-mini)
+(define-key global-map (kbd "C-x C-d") 'helm-browse-project)
+(define-key global-map (kbd "C-x C-g") 'helm-ag)
 
 ;; turn off auto save and auto backup
 (setq make-backup-files nil)
