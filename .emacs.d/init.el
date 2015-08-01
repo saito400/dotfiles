@@ -81,6 +81,10 @@
 (unless (package-installed-p 'neotree)
   (package-refresh-contents) (package-install 'neotree))
 
+(unless (package-installed-p 'magit)
+  (package-refresh-contents) (package-install 'magit))
+
+
 ;;theme
 (load-theme 'atom-dark t)
 
