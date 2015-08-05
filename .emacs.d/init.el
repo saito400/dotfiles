@@ -90,6 +90,7 @@
 
 ;; for neotree
 (require 'neotree)
+(custom-set-variables '(neo-vc-integration '(face)))
 (global-set-key [f8] 'neotree-toggle)
 
 ;; for helm
