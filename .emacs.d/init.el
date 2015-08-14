@@ -251,3 +251,12 @@
                (message "Quit")
                (throw 'end-flag t)))))))
 (global-set-key "\C-c\C-r" 'window-resizer)
+
+;; yasnippet
+;; download snippet
+;; git clone https://github.com/AndreaCrotti/yasnippet-snippets.git
+
+(add-to-list 'load-path "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
