@@ -27,4 +27,4 @@
 [init]
 	templatedir = /Users/ken/.git_template/
 [push]
-	default = simple
+	default = current
