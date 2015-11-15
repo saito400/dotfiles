@@ -277,3 +277,13 @@
 ;; close helm-git mini buffer after launch
 (setq close-buffer (listify-key-sequence "\C-g"))
 (add-hook 'emacs-startup-hook 'close-buffer)
+
+;; display column number
+(column-number-mode t)
+
+;; hilight space
+(setq-default show-trailing-whitespace t)
+
+;; display time
+(display-time)
+
