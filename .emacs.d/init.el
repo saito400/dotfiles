@@ -272,5 +272,6 @@
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
-
+;; helm-git
+(add-hook 'emacs-startup-hook 'helm-ls-git-ls)
 
