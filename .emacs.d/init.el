@@ -41,7 +41,7 @@
 
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
-  
+
 (unless (package-installed-p 'ensime)
   (package-refresh-contents) (package-install 'ensime))
 
@@ -87,6 +87,11 @@
 (unless (package-installed-p 'yasnippet)
   (package-refresh-contents) (package-install 'yasnippet))
 
+(unless (package-installed-p 'ruby-mode)
+  (package-refresh-contents) (package-install 'ruby-mode))
+
+(unless (package-installed-p 'ruby-block)
+  (package-refresh-contents) (package-install 'ruby-block))
 
 ;;theme
 (load-theme 'atom-dark t)
