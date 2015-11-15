@@ -274,4 +274,6 @@
 
 ;; helm-git
 (add-hook 'emacs-startup-hook 'helm-ls-git-ls)
-
+;; close helm-git mini buffer after launch
+(setq close-buffer (listify-key-sequence "\C-g"))
+(add-hook 'emacs-startup-hook 'close-buffer)
