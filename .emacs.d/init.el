@@ -68,6 +68,13 @@
 (unless (package-installed-p 'ruby-block)
   (package-refresh-contents) (package-install 'ruby-block))
 
+(unless (package-installed-p 'ruby-electric)
+  (package-refresh-contents) (package-install 'ruby-electric))
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
 (unless (package-installed-p 'flycheck)
   (package-refresh-contents) (package-install 'flycheck))
 (add-hook 'after-init-hook #'global-flycheck-mode)
