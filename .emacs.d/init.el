@@ -90,11 +90,6 @@
 ;;theme
 (load-theme 'atom-dark t)
 
-;; for neotree
-(require 'neotree)
-(custom-set-variables '(neo-vc-integration '(face)))
-(global-set-key [f8] 'neotree-toggle)
-
 ;; for helm
 (require 'helm)
 (helm-mode 1)
