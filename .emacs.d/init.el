@@ -1,7 +1,3 @@
-;;
-;; init.el
-;;
-
 ;; Language.
 (set-language-environment 'Japanese)
 
@@ -66,8 +62,26 @@
 (unless (package-installed-p 'wgrep)
   (package-refresh-contents) (package-install 'wgrep))
 
-;;(unless (package-installed-p 'flycheck)
-;;  (package-refresh-contents) (package-install 'flycheck))
+(unless (package-installed-p 'ruby-mode)
+  (package-refresh-contents) (package-install 'ruby-mode))
+
+(unless (package-installed-p 'ruby-block)
+  (package-refresh-contents) (package-install 'ruby-block))
+
+(unless (package-installed-p 'ruby-electric)
+  (package-refresh-contents) (package-install 'ruby-electric))
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
+(unless (package-installed-p 'flycheck)
+  (package-refresh-contents) (package-install 'flycheck))
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'ruby-mode-hook
+  '(lambda ()
+    (setq flycheck-checker 'ruby-rubocop)
+    (flycheck-mode 1)))
 
 (unless (package-installed-p 'atom-dark-theme)
   (package-refresh-contents) (package-install 'atom-dark-theme))
@@ -81,19 +95,8 @@
 (unless (package-installed-p 'yasnippet)
   (package-refresh-contents) (package-install 'yasnippet))
 
-(unless (package-installed-p 'ruby-mode)
-  (package-refresh-contents) (package-install 'ruby-mode))
-
-(unless (package-installed-p 'ruby-block)
-  (package-refresh-contents) (package-install 'ruby-block))
-
 ;;theme
 (load-theme 'atom-dark t)
-
-;; for neotree
-(require 'neotree)
-(custom-set-variables '(neo-vc-integration '(face)))
-(global-set-key [f8] 'neotree-toggle)
 
 ;; for helm
 (require 'helm)
@@ -195,8 +198,6 @@
 
 (put 'downcase-region 'disabled nil)
 
-;; flycheck
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; window resizer
 (defun window-resizer ()
