@@ -75,6 +75,8 @@
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
 
+;; run following command to use rubocop
+;; gem install rubocop ruby-lint
 (unless (package-installed-p 'flycheck)
   (package-refresh-contents) (package-install 'flycheck))
 (add-hook 'after-init-hook #'global-flycheck-mode)
