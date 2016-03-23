@@ -1,7 +1,3 @@
-;;
-;; init.el
-;;
-
 ;; Language.
 (set-language-environment 'Japanese)
 
@@ -66,8 +62,13 @@
 (unless (package-installed-p 'wgrep)
   (package-refresh-contents) (package-install 'wgrep))
 
-;;(unless (package-installed-p 'flycheck)
-;;  (package-refresh-contents) (package-install 'flycheck))
+(unless (package-installed-p 'flycheck)
+  (package-refresh-contents) (package-install 'flycheck))
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'ruby-mode-hook
+  '(lambda ()
+    (setq flycheck-checker 'ruby-rubocop)
+    (flycheck-mode 1)))
 
 (unless (package-installed-p 'atom-dark-theme)
   (package-refresh-contents) (package-install 'atom-dark-theme))
@@ -190,8 +191,6 @@
 
 (put 'downcase-region 'disabled nil)
 
-;; flycheck
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; window resizer
 (defun window-resizer ()
