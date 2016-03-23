@@ -62,6 +62,12 @@
 (unless (package-installed-p 'wgrep)
   (package-refresh-contents) (package-install 'wgrep))
 
+(unless (package-installed-p 'ruby-mode)
+  (package-refresh-contents) (package-install 'ruby-mode))
+
+(unless (package-installed-p 'ruby-block)
+  (package-refresh-contents) (package-install 'ruby-block))
+
 (unless (package-installed-p 'flycheck)
   (package-refresh-contents) (package-install 'flycheck))
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -81,12 +87,6 @@
 
 (unless (package-installed-p 'yasnippet)
   (package-refresh-contents) (package-install 'yasnippet))
-
-(unless (package-installed-p 'ruby-mode)
-  (package-refresh-contents) (package-install 'ruby-mode))
-
-(unless (package-installed-p 'ruby-block)
-  (package-refresh-contents) (package-install 'ruby-block))
 
 ;;theme
 (load-theme 'atom-dark t)
