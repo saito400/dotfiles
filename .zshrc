@@ -40,3 +40,4 @@ bindkey -e
 eval "$(rbenv init -)"
 
 alias less='less -N'
+alias emacs='emacs -nw'
