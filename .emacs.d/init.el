@@ -71,6 +71,9 @@
 (unless (package-installed-p 'ruby-electric)
   (package-refresh-contents) (package-install 'ruby-electric))
 
+(unless (package-installed-p 'helm-ag)
+  (package-refresh-contents) (package-install 'helm-ag))
+
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
