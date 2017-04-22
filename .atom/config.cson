@@ -1,7 +1,12 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "fe44d08e-9bb0-4f7a-8ffa-44c1c599dd37"
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
+  core:
+    telemetryConsent: "no"
   editor:
     fontSize: 12
   "exception-reporting":
