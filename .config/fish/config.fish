@@ -1,4 +1,6 @@
 
+set -x LSCOLORS gxfxcxdxbxegedabagacad
+
 set -x GOPATH $HOME/.go
 set -x PATH $GOPATH/bin $PATH
 
