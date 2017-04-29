@@ -9,4 +9,4 @@ rbenv init - fish | source
 set -x EDITOR emacs
 
 alias g git
-
+alias less 'less -N'
