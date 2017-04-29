@@ -35,12 +35,6 @@
 (unless (package-installed-p 'helm)
   (package-refresh-contents) (package-install 'helm))
 
-(unless (package-installed-p 'scala-mode2)
-  (package-refresh-contents) (package-install 'scala-mode2))
-
-(unless (package-installed-p 'ensime)
-  (package-refresh-contents) (package-install 'ensime))
-
 (unless (package-installed-p 'helm-ls-git)
   (package-refresh-contents) (package-install 'helm-ls-git))
 
@@ -97,9 +91,6 @@
 (unless (package-installed-p 'magit)
   (package-refresh-contents) (package-install 'magit))
 
-(unless (package-installed-p 'yasnippet)
-  (package-refresh-contents) (package-install 'yasnippet))
-
 ;;theme
 (load-theme 'atom-dark t)
 
@@ -123,34 +114,6 @@
 (keyboard-translate ?\C-h ?\C-?)
 
 (electric-indent-mode 0)
-
-;; for scala
-(setenv "PATH" (concat "/usr/local/bin/sbt:" (getenv "PATH")))
-(setenv "PATH" (concat "/usr/local/bin/scala:" (getenv "PATH")))
-
-;; scala-mode2
-(require 'scala-mode2)
-
-;; ensime
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(add-hook 'scala-mode-hook 'my-scala-mode-hook)
-
-(setq ensime-sem-high-faces
- '((var . (:foreground "#ff2222"))
-   (val . (:foreground "#dddddd"))
-   (varField . (:foreground "#ff3333"))
-   (valField . (:foreground "#dddddd"))
-   (functionCall . (:foreground "#84BEE3"))
-   (param . (:foreground "#ffffff"))
-   (class . font-lock-type-face)
-   (trait . (:foreground "#084EA8"))
-   (object . (:foreground "#026DF7"))
-   (package . font-lock-preprocessor-face)))
-
-(defun my-scala-mode-hook ()
-  (setq scala-indent:use-javadoc-style t)
-)
 
 ;; helm-mini
 (progn
@@ -279,3 +242,23 @@
 ;; display time
 (display-time)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(frame-background-mode (quote dark))
+ '(helm-delete-minibuffer-contents-from-point t)
+ '(helm-mini-default-sources
+   (quote
+    (helm-source-buffers-list helm-source-recentf helm-source-files-in-current-dir helm-source-ls-git)))
+ '(helm-truncate-lines t t)
+ '(package-selected-packages
+   (quote
+    (yasnippet magit ace-jump-mode atom-dark-theme flycheck ruby-electric ruby-block wgrep markdown-mode company go-mode web-mode helm-ag helm-ls-git helm))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
