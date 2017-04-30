@@ -8,5 +8,7 @@ rbenv init - fish | source
 
 set -x EDITOR emacs
 
+set -x FZF_DEFAULT_OPTS '-e'
+
 alias g git
 alias less 'less -N'
