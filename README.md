@@ -18,3 +18,4 @@ apm install --packages-file atom_packages.txt
 
 apm list --installed --bare > atom_packages.txt
 
+apm upgrade
