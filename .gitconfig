@@ -2,7 +2,7 @@
 	name = saito400
 	email = ken.s.530000@gmail.com
 [core]
-	excludesfile = /Users/ken/.gitignore_global
+	excludesfile = /Users/${HOME}/.gitignore_global
 	editor = "emacs -nw"
 
 
@@ -25,6 +25,6 @@
 	co = checkout
 	pp = pull --prune
 [init]
-	templatedir = /Users/ken/.git_template/
+	templatedir = /Users/${HOME}/.git_template/
 [push]
 	default = current
