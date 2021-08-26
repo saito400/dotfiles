@@ -25,6 +25,6 @@
 	co = checkout
 	pp = pull --prune
 [init]
-	templatedir = /Users/${HOME}/.git_template/
+	templatedir = {$HOME}/.git_template/
 [push]
 	default = current
