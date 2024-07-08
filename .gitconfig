@@ -3,7 +3,7 @@
 	email = ken.s.530000@gmail.com
 [core]
 	excludesfile = /Users/${HOME}/.gitignore_global
-	editor = "emacs -nw"
+	editor = "code --wait"
 
 
 [difftool "sourcetree"]
