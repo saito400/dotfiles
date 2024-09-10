@@ -30,6 +30,8 @@ zle -N fzf-ghq
 
 bindkey '^g' fzf-ghq
 
+export FZF_DEFAULT_OPTS="--exact"
+
 # ctrl+r
 function select-history() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
